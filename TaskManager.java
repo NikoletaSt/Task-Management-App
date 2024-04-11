@@ -5,13 +5,11 @@ public class TaskManager {
         private Task[] tasks;
         private int taskCount;
 
-        // Constructor
         public TaskManager(int capacity) {
             tasks = new Task[capacity];
             taskCount = 0;
         }
 
-        // Method to add a task
         public void addTask(Task task) {
             if (taskCount < tasks.length) {
                 tasks[taskCount++] = task;
@@ -37,7 +35,6 @@ public class TaskManager {
         System.out.println("Task not found.");
     }
 
-    // Method to mark a task as completed
         public void markTaskCompleted(int taskId) {
             for (Task task : tasks) {
                 if (task != null && task.getTaskId() == taskId) {
@@ -49,7 +46,6 @@ public class TaskManager {
             System.out.println("Task not found.");
         }
 
-        // Method to view all tasks
         public void viewAllTasks() {
             if (taskCount == 0) {
                 System.out.println("No tasks to display.");
@@ -68,7 +64,6 @@ public class TaskManager {
             }
         }
 
-        // Method to generate reports for tasks due today
         public void generateReportForTasksDueToday() {
             Date today = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
