@@ -8,7 +8,6 @@ public class Task {
     private boolean completed;
     private int priority;
 
-    // Constructor
     public Task(int taskId, String description, Date dueDate) {
         this.taskId = taskId;
         this.description = description;
@@ -17,7 +16,6 @@ public class Task {
         this.priority = priority;
     }
 
-    // Getters and setters
     public int getTaskId() {
         return taskId;
     }
@@ -42,7 +40,6 @@ public class Task {
         this.completed = completed;
     }
 
-    // Method to format date
     public String formattedDueDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.format(dueDate);
