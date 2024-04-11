@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        TaskManager taskManager = new TaskManager(10); // Setting task manager capacity to 10
+        TaskManager taskManager = new TaskManager(10);
 
         while (true) {
             System.out.println("Your Task Management App:");
