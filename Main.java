@@ -1,4 +1,5 @@
-import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat; //implementaion of
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         TaskManager taskManager = new TaskManager(10);
 
-        while (true) {
+        while (true) { //while loop for re-appearing of the menu every time the user finishes using a certain feature 
             System.out.println("Your Task Management App:");
             System.out.println("1. Add New Task");
             System.out.println("2. Mark Task as Done");
@@ -38,7 +39,7 @@ public class Main {
                         Task newTask = new Task(taskId, description, dueDate);
                         taskManager.addTask(newTask);
                     } catch (Exception e) {
-                        System.out.println("Invalid date format. Task was not added.");
+                        System.out.println("Invalid date format. Task was not added."); //try-catch for input validation and user-friendly program; in case of a wrongly input date, user will be notified
                     }
                     break;
                 case 2:
@@ -66,7 +67,7 @@ public class Main {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid. Please enter a number 1 - 7.");
+                    System.out.println("Invalid. Please enter a number 1 - 7."); //default case if the user does not enter a valid menu number 
             }
         }
     }
