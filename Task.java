@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Task {
-    private int taskId;
+    private int taskId; //encapsulation of the varables
     private String description;
     private Date dueDate;
     private int priority;
@@ -16,6 +16,11 @@ public class Task {
         this.priority = priority;
     }
 
+    //getter methods for the variables 
+    public Date getDueDate() {
+        return dueDate;
+    }
+    
     public int getTaskId() {
         return taskId;
     }
@@ -24,24 +29,20 @@ public class Task {
         return description;
     }
 
-    public Date getDueDate() {
-        return dueDate;
-    }
-
     public int getPriority() {
         return priority;
-    }
-
-    public boolean isCompleted() {
-        return completed;
     }
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
+
     public String formattedDueDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        return dateFormat.format(dueDate);
+        return dateFormat.format(dueDate); //fomatting the date
     }
 }
