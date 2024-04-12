@@ -8,7 +8,7 @@ public class Task {
     private int priority;
     private boolean completed;
 
-    public Task(int taskId, String description, Date dueDate) {
+    public Task(int taskId, String description, Date dueDate, int priority) {
         this.taskId = taskId;
         this.description = description;
         this.dueDate = dueDate;
@@ -16,11 +16,11 @@ public class Task {
         this.priority = priority;
     }
 
-    //getter methods for the variables 
+    //getter methods for the variables
     public Date getDueDate() {
         return dueDate;
     }
-    
+
     public int getTaskId() {
         return taskId;
     }
