@@ -5,8 +5,8 @@ public class Task {
     private int taskId;
     private String description;
     private Date dueDate;
-    private boolean completed;
     private int priority;
+    private boolean completed;
 
     public Task(int taskId, String description, Date dueDate) {
         this.taskId = taskId;
