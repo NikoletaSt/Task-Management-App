@@ -6,11 +6,11 @@ public class TaskManager {
         private int taskCount;
 
         public TaskManager(int capacity) {
-            tasks = new Task[capacity];
+            tasks = new Task[capacity]; //capacity is the maximum number of the tasks the app can store 
             taskCount = 0;
         }
 
-        public void addTask(Task task) {
+        public void addTask(Task task) { //a method for adding a new task into the to-do list 
             if (taskCount < tasks.length) {
                 tasks[taskCount++] = task;
                 System.out.println("Task added successfully.");
@@ -19,11 +19,10 @@ public class TaskManager {
             }
         }
 
-    public void deleteTask(int taskId) {
+    public void deleteTask(int taskId) { //deleting an existing task 
         for (int i = 0; i < taskCount; i++) {
             if (tasks[i] != null && tasks[i].getTaskId() == taskId) {
                 tasks[i] = null;
-                // Move tasks to fill the gap
                 for (int j = i; j < taskCount - 1; j++) {
                     tasks[j] = tasks[j + 1];
                 }
@@ -35,7 +34,7 @@ public class TaskManager {
         System.out.println("Task not found.");
     }
 
-        public void markTaskCompleted(int taskId) {
+        public void markTaskCompleted(int taskId) { //marking a task as done 
             for (Task task : tasks) {
                 if (task != null && task.getTaskId() == taskId) {
                     task.setCompleted(true);
@@ -46,7 +45,7 @@ public class TaskManager {
             System.out.println("Task not found.");
         }
 
-        public void viewAllTasks() {
+        public void viewAllTasks() { //creating a report with all tasks
             if (taskCount == 0) {
                 System.out.println("No tasks to display.");
             } else {
@@ -64,7 +63,7 @@ public class TaskManager {
             }
         }
 
-        public void generateReportForTasksDueToday() {
+        public void generateReportForTasksDueToday() { //generating report for the task due the specific date
             Date today = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String todayStr = dateFormat.format(today);
@@ -86,7 +85,7 @@ public class TaskManager {
             }
         }
 
-    public void generateReportForTasksWithMissedDueDates() {
+    public void generateReportForTasksWithMissedDueDates() { //generates the report for the tasks with missed due dates
         Date today = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         System.out.println("Tasks With Missed Due Dates:");
